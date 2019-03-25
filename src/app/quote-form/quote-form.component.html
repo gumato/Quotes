@@ -1,0 +1,32 @@
+
+<!--<app-quote-form>(addQuotes)="addNewQuotes($event)"</app-quote-form>-->
+<div class="container-fluid m">
+
+<div class="jumborton">
+
+</div>
+  <div id="home" class="rap">
+    <h2> Welcome to Inspirational Quotes</h2>
+    <h5>Encouraging people to work towards there Dreams</h5>
+
+  </div>
+</div>
+<app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+
+  <div id="next">
+     <div class="row">
+    <div class="col4 inner-left">
+      <h4 id="pad" The Best Quotes></h4>
+    </div>
+    <div *ngFor="let quote of quotes;let i = 'index'">
+
+
+
+      <ul id="quotes">
+
+          <li>{{quote.publisher}} posted on {{quote.completeDate|date}}</li>
+          <app-quote-details [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-details>
+        </ul>
+      </div>
+      </div>
+    </div>
