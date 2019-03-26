@@ -10,7 +10,7 @@
 
       <div [hidden]="publisher.valid || publisher.pristine"
       class="alert alert-danger">
-      <p> Input is Required</p>
+      <!-- <p> Input is Required</p> -->
 
       </div>
     </div>
@@ -20,7 +20,7 @@
     <input type="text" class="form-control" id="author" [(ngModel)]="newQuote.author" name="author" #author="ngModel" required>
 
   <div [hidden]="author.valid || author.pristine" class="alert alert-primary">
-      <p> Input is Required</p>
+      <!-- <p> Input is Required</p> -->
 
   </div>
     </div>
@@ -29,7 +29,7 @@
       <label for="quote">Quote</label>
       <textarea class="form-control" id="description" [(ngModel)]="newQuote.quote" name="quote"#quote="ngModel" required></textarea>
       <div [hidden]="quote.valid || quote.pristine" class="alert alert-primary">
-        <p> Input is Required</p>
+        <!-- <p> Input is Required</p> -->
 
       </div>
 
