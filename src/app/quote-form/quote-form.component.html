@@ -1,32 +1,44 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+   <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
 
-<!--<app-quote-form>(addQuotes)="addNewQuotes($event)"</app-quote-form>-->
-<div class="container-fluid m">
+      <div class="form-group">
+      <label for="publisher">Publisher</label>
+      <input type="text" class="form-control" id="publisher" [(ngModel)] ="newQuote.publisher" name="publisher" #publisher="ngModel" required>
 
-<div class="jumborton">
+      <div [hidden]="publisher.valid || publisher.pristine"
+      class="alert alert-danger">
+      <p> Input is Required</p>
 
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="author">author</label>
+    <input type="text" class="form-control" id="author" [(ngModel)]="newQuote.author" name="author" #author="ngModel" required>
+
+  <div [hidden]="author.valid || author.pristine" class="alert alert-primary">
+      <p> Input is Required</p>
+
+  </div>
+    </div>
+
+    <div class="form-group">
+      <label for="quote">Quote</label>
+      <textarea class="form-control" id="description" [(ngModel)]="newQuote.quote" name="quote"#quote="ngModel" required></textarea>
+      <div [hidden]="quote.valid || quote.pristine" class="alert alert-primary">
+        <p> Input is Required</p>
+
+      </div>
+
+      </div>
+
+      <button type ="Submit" class="btn btn-success btn-lg">Add Quote</button>
+    </form>
+  </div>
 </div>
-  <div id="home" class="rap">
-    <h2> Welcome to Inspirational Quotes</h2>
-    <h5>Encouraging people to work towards there Dreams</h5>
 
   </div>
 </div>
-<app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-
-  <div id="next">
-     <div class="row">
-    <div class="col4 inner-left">
-      <h4 id="pad" The Best Quotes></h4>
-    </div>
-    <div *ngFor="let quote of quotes;let i = 'index'">
-
-
-
-      <ul id="quotes">
-
-          <li>{{quote.publisher}} posted on {{quote.completeDate|date}}</li>
-          <app-quote-details [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-details>
-        </ul>
-      </div>
-      </div>
-    </div>
